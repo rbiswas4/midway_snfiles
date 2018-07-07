@@ -55,7 +55,7 @@ SIMGEN_DUMPALL:  30 CID GENTYPE  SNTYPE  NON1A_INDEX  GENZ LIBID RA DECL MWEBV M
 # only doing from 0.05 since low-z is in Foundation
 H0:           67.27
 ZRANGE:       0.05 1.4 
-GENPREFIX:    RH_DDF_1aONLY_Y10_G10
+GENPREFIX:    USERNAME_DDF_1aONLY_Y10_G10
 FORMAT_MASK:  48      # 2=TEXT  8=BLIND   16=RanCID  32=FITS-FORMAT
 
 # the same RANSEED means that each job has new seed,
