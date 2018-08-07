@@ -16,11 +16,14 @@ for cl, line in enumerate(clines):
     split = line.split('.')
     cadences.append(split[0]+'.'+split[1])
 
-#    output_file = input_file
+    output_file = input_file[0:-6] +'_'+ cadences[cl]+ '.INPUT'
+    f = open(output_file, 'w')
     for iline in ilines:
         if 'COADD' in iline:
             lline =  iline.split('.')
             lline[-2] = lline[-2][0:-7]
-            lline[-1] = 'cwp/'+cadences[cl]+'.COADD'
-            print "/".join(lline)
-    
+            lline[-1] = 'cwp/'+cadences[cl]+'.COADD' + '\n'
+            iline =  "/".join(lline)
+        f.write(iline)
+
+            
