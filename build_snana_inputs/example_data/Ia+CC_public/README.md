@@ -1,0 +1,3 @@
+- Purpose: This is an input for baseline simulations of Ia and CC together. 
+- Location on midway: `/project/rkessler/SURVEYS/LSST/USERS/rbiswas/sim_inputs_working/Ia+CC_public`
+- Tested SNANA version: SNANA version 64b
