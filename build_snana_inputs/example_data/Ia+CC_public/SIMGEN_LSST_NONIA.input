@@ -1,0 +1,54 @@
+
+# SIMLIB_FILE: DES_10field_griz_B12.SIMLIB
+
+SOLID_ANGLE:  0.0270     # 15 sq deg
+
+NGENTOT_LC:  1260               # one season up to Zmax=1.1
+# GENVERSION:  RKTEST_NON1A_DES    # SNDATA version to generate
+GENSOURCE:   RANDOM   
+GENMODEL:    NONIA
+#GENMAG_SMEAR_FILTER: UBVRIabcdeugriz 0.05
+
+GENFILTERS:  ugrizY
+INPUT_FILE_INCLUDE:  SIMGEN_INCLUDE_NON1A_K10.INPUT
+
+KCOR_FILE:  $LSST_ROOT/kcor/2017-04_approx/kcor_LSST.fits
+
+
+# selection criteria for generation
+GENRANGE_PEAKMJD:  59740 63200
+GENSIGMA_SEARCH_PEAKMJD:  1.0     # sigma-smearing for  SEARCH_PEAKMJD (days)
+
+GENRANGE_REDSHIFT:  0.05 1.20
+GENSIGMA_REDSHIFT:  0.001
+GENRANGE_RA:      -360.   360.0   deg
+GENRANGE_DECL:    -360.   360.5
+GENRANGE_TREST:   -40.0  70.0     # rest epoch relative to peak (days)
+
+RANSEED: 12945       # random number seed
+
+# smear flags: 0=off, 1=on
+SMEARFLAG_FLUX:    1  # photo-stat smearing of signal, sky, etc ...
+SMEARFLAG_ZEROPT:  1  # smear zero-point with zptsig
+
+APPLY_SEARCHEFF_OPT: 0  # apply trigger and mark data files when satisfied
+
+APPLY_CUTWIN_OPT: 1
+CUTWIN_NEPOCH: 5 -5.             # require 5 epochs (no S/N requirement)
+CUTWIN_SNRMAX: 5 griz 2 -20. 80. # require 1 of griz with S/N > 5
+
+
+FORMAT_MASK:  2
+
+DNDZ:  POWERLAW  6.8E-5  3.6  # From LSST CC contamination memo
+
+GENTAU_AV:  0.0  ! no host extinction (added 9/18/2010)
+
+
+# cosmological params for lightcurve generation and redshift distribution
+OMEGA_MATTER:  0.3
+OMEGA_LAMBDA:  0.7
+W0_LAMBDA:    -1.00
+H0:           70.0   
+
+SIMGEN_DUMP: 30  CID GENTYPE SNTYPE NON1A_INDEX GENZ LIBID RA DECL MWEBV MU PEAKMJD MAGT0_g MAGT0_r MAGT0_i MAGT0_z MAGT0_Y SNRMAX_g SNRMAX_r SNRMAX_i SNRMAX_z MJD0 SNRMAX SNRMAX2 SNRMAX3  NOBS TRESTMIN TRESTMAX TGAPMAX CUTMASK  SIM_SEARCHEFF_MASK
