@@ -2,7 +2,7 @@ import numpy as np
 import pylab as pl
 import sys
 
-''' eg. use as python generate_cadences.py RH data/simInput/SIMGEN_MASTER_LSST_DDF_Y10_baseline.INPUT wfdcadence.list '''
+''' eg. use as python generate_cadences.py RH data/simInput/SIMGEN_MASTER_LSST_DDF_Y10_baseline.INPUT ddfcadence.list '''
 username = sys.argv[1]
 cadence_list = sys.argv[3]
 input_file = sys.argv[2]
