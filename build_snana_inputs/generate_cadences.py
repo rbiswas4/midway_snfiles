@@ -1,3 +1,4 @@
+from __future__ import print_function
 import numpy as np
 import pylab as pl
 import sys
@@ -18,7 +19,7 @@ for cl, line in enumerate(clines):
     cadences.append(split[0]+'.'+split[1])
 
     output_file = input_file[0:-6] +'_'+ cadences[cl][0:-7]+ '.INPUT'
-    print output_file
+    print(output_file)
     f = open(output_file, 'w')
     for iline in ilines:
         if 'USERNAME' in iline:
@@ -28,7 +29,7 @@ for cl, line in enumerate(clines):
             cline = ": ".join(bline)
             lline[0]=cline
             iline = "_".join(lline)
-#            print iline
+#           print(iline)
         
         if 'COADD' in iline:
             lline =  iline.split('.')
