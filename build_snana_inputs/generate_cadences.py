@@ -3,11 +3,11 @@ import numpy as np
 import pylab as pl
 import sys
 
-''' eg. use as python generate_cadences.py RH data/simInput/SIMGEN_MASTER_LSST_DDF_Y10_baseline.INPUT ddfcadence.list, depending on if you want DDF or WFD for example. '''
+''' eg. use as 
+python generate_cadences.py YOURPREFIX your/path/to/SIMGEN_MASTER_LSST_XX_Y10_baseline.INPUT ddfcadence.list, depending on if you want DDF or WFD for example. '''
 username = sys.argv[1]
 cadence_list = sys.argv[3]
 input_file = sys.argv[2]
-
 
 clines = open(cadence_list, 'r').readlines()
 ilines = open(input_file, 'r').readlines()
